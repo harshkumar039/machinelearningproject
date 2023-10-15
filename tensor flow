@@ -1,0 +1,21 @@
+import random
+
+def generate_ai_inspired_number():
+    # Generate a random number between 1 and 100
+    random_number = random.randint(1, 100)
+
+    # Select a random letter from "AI" to append to the number
+    ai_letter = random.choice("AI")
+
+    # Combine the random number and the AI letter
+    ai_inspired_number = f"{random_number}{ai_letter}"
+
+    return ai_inspired_number
+
+if __name__ == "__main__":
+    num_samples = 5  # You can change this to generate more numbers
+    ai_numbers = [generate_ai_inspired_number() for _ in range(num_samples)]
+
+    print("AI-Inspired Random Numbers:")
+    for number in ai_numbers:
+        print(number)
