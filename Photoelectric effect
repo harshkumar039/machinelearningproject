@@ -1,0 +1,40 @@
+import java.util.Random;
+
+class PhotoelectricMaterial {
+    private double workFunction; // Work function of the material in eV
+
+    public PhotoelectricMaterial(double workFunction) {
+        this.workFunction = workFunction;
+    }
+
+    public boolean isEmissionPossible(double photonEnergy) {
+        return photonEnergy >= workFunction;
+    }
+}
+
+class Photon {
+    private double energy; // Energy of the photon in eV
+
+    public Photon(double energy) {
+        this.energy = energy;
+    }
+
+    public double getEnergy() {
+        return energy;
+    }
+}
+
+public class PhotoelectricEffectSimulator {
+    public static void main(String[] args) {
+        double photonEnergy = 2.0; // Energy of the incident photon in eV
+        PhotoelectricMaterial material = new PhotoelectricMaterial(1.0); // Work function of the material
+
+        if (material.isEmissionPossible(photonEnergy)) {
+            System.out.println("Emission of electrons is possible.");
+            System.out.println("Photon energy: " + photonEnergy + " eV");
+        } else {
+            System.out.println("Emission of electrons is not possible.");
+            System.out.println("Photon energy: " + photonEnergy + " eV");
+        }
+    }
+}
