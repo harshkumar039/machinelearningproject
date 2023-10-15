@@ -1,0 +1,14 @@
+import java.util.Random;
+
+public class HeisenbergUncertaintyPrinciple {
+    public static void main(String[] args) {
+        Random random = new Random();
+        
+        // Generate a random position and momentum for a particle
+        double position = random.nextDouble();  // Position
+        double momentum = random.nextDouble();  // Momentum
+        
+        System.out.println("Particle Position: " + position);
+        System.out.println("Particle Momentum: " + momentum);
+    }
+}
